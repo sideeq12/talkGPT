@@ -6,7 +6,7 @@ const Home = () => {
     <div className='flex flex-col justify-center items-center h-screen px-2 text-white'>
         <h1 className='text-5xl font-bold mb-20'>TalkGPT</h1>
 
-        <div>
+        <div className='flex space-x-2 text-center'>
             <div>
                 <div className='flex flex-col items-center mb-5 justify-center'>
                 <SunIcon className="h-8 w-8"/>

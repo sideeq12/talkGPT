@@ -1,11 +1,18 @@
 "use client"
 import React from 'react'
 import { useSession, signOut } from 'next-auth/react'
+import { useCollection } from 'react-firebase-hooks/firestore';
 import NewChat from './NewChat'
 import Image from 'next/image'
+import { collection } from 'firebase/firestore';
+import { db } from '../firebase';
+import ChatRow from './chatRow';
 
 const SideBar = () => {
+  
   const { data : session } = useSession()
+  const [chats, loading, error ] = useCollection(
+     session && collection(db, "users", session.user?.email!, "chats"))
   return (
     <div className='p-2 flex flex-col h-screen'>
         <div className='flex-1'>
@@ -13,8 +20,9 @@ const SideBar = () => {
             <div className=''>
                 {/* Models selections */}
             </div>
-
-            {/* Chat rows */}
+            {chats?.docs.map(chat => (
+              <ChatRow id={chat.id} key={chat.id} />
+            ))}
         </div>
         { session &&
           <Image  onClick={()=> signOut()} src={session.user?.image!} 

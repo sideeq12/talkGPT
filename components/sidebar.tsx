@@ -24,9 +24,14 @@ const SideBar = () => {
             <div className='hidden md:inline'>
               <ModelSelection />
             </div>
-            {chats?.docs.map(chat => (
+          <div className='flex flex-col space-y-2 my-2'>
+          {loading && (<div className='animate-pulse text-center text-white'>
+            <p>Loading chats...</p>
+          </div>)}
+          {chats?.docs.map(chat => (
               <ChatRow id={chat.id} key={chat.id} />
             ))}
+          </div>
         </div>
         { session &&
           <Image  onClick={()=> signOut()} src={session.user?.image!} 

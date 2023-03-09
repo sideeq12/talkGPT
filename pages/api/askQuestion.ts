@@ -25,13 +25,14 @@ export default async function handler(
     }
 
 const response = await query(prompt, chatId, model);
+console.log("the response is", response)
 const message : Message = {
     text : response || "ChatGPT no get am oo",
     createdAt : admin.firestore.Timestamp.now(),
     user : {
         _id : "ChatGPT",
         name : "ChatGPT",
-        avatar : "links.papareact.com/89k"
+        avatar : "https://links.papareact.com/89k"
     }
 }
 

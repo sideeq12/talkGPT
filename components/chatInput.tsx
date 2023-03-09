@@ -15,7 +15,7 @@ const ChatInput = ({chatId}: Props) => {
     const { data : session } = useSession()
 
     // useSWR TO GET MODEL
-    const model = "text-davinci-model"
+    const model = "text-davinci-003"
 
     const sendMessage = async (e: FormEvent<HTMLFormElement>)=>{
         e.preventDefault();

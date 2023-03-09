@@ -34,11 +34,13 @@ const SideBar = () => {
           </div>
         </div>
         { session &&
-          <Image  onClick={()=> signOut()} src={session.user?.image!} 
-          className="h-12 w-12 rounded-full cursor-pointer mx-auto
-          mb-2 hover:opacity-50" 
+         (<div onClick={()=> signOut()} className="cursor-pointer text-white flex flex-row justify-center items-start mx-auto hover:opacity-50
+         mb-2">
+           <Image src={session.user?.image!} className="h-12 w-12 rounded-full" 
         width={200}
-        height={200} alt="" />}
+        height={200} alt="" />
+        <span className='text-sm ml-3 mt-3 hover:text-red-500 hover:font-bold'>Sign out</span>
+         </div>)}
     </div>
   )
 }

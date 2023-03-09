@@ -1,3 +1,4 @@
+"use client"
 import { ChatBubbleLeftIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { collection, deleteDoc, doc, orderBy, query } from 'firebase/firestore'
 import { useSession } from 'next-auth/react'
@@ -19,7 +20,7 @@ const ChatRow = ({id} : Props) => {
         collection(db, "user", session?.user?.email!, "chats", id, "messages"),
         orderBy("createdAt", "asc")
     ))
-
+    console.log("we are check", messages?.docs)
     useEffect(()=>{
         if(!pathName) return;
         setActive(pathName.includes(id))

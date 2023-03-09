@@ -19,7 +19,6 @@ const ChatRow = ({id} : Props) => {
 
     const [messages]  = useCollection(session && query(collection(db, "users", session.user?.email!, "chats",
     id, "messages"), orderBy("createdAt", "asc") ))
-    console.log("we are check", messages?.docs)
     useEffect(()=>{
         if(!pathName) return;
         setActive(pathName.includes(id))

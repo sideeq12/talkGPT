@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { collection, orderBy, query } from 'firebase/firestore';
 import { db } from '../firebase';
 import ChatRow from './chatRow';
+import ModelSelection from './ModelSelection';
 
 const SideBar = () => {
   
@@ -20,8 +21,8 @@ const SideBar = () => {
     <div className='p-2 flex flex-col h-screen'>
         <div className='flex-1'>
             <NewChat />
-            <div className=''>
-                {/* Models selections */}
+            <div className='hidden md:inline'>
+              <ModelSelection />
             </div>
             {chats?.docs.map(chat => (
               <ChatRow id={chat.id} key={chat.id} />

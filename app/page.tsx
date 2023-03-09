@@ -6,7 +6,7 @@ const Home = () => {
     <div className='flex flex-col justify-center items-center h-screen px-2 text-white'>
         <h1 className='text-5xl font-bold mb-20'>TalkGPT</h1>
 
-        <div className='flex space-x-2 text-center'>
+        <div className='space-x-2 text-center flex flex-col md:flex-row'>
             <div>
                 <div className='flex flex-col items-center mb-5 justify-center'>
                 <SunIcon className="h-8 w-8"/>
@@ -15,7 +15,6 @@ const Home = () => {
                 <div className='space-y-2'>
                     <p className='infoText'>Explain something to me</p>
                     <p className='infoText'> What is the difference between a cat and Dog</p>
-                    <p className='infoText'> Who is Peter Obi</p>
                 </div>
             </div>
             <div>
@@ -26,10 +25,9 @@ const Home = () => {
                 <div className='space-y-2'>
                     <p className='infoText'>Change ChatGPT model to use</p>
                     <p className='infoText'> Messgaes are store on Firebase Firestore</p>
-                    <p className='infoText'> Quick toast Notification when ChatGPT is thinking</p>
                 </div>
             </div>
-            <div>
+            <div className='hidden md:inline-flex md:flex-col'>
                 <div className='flex flex-col items-center mb-5 justify-center'>
                 <ExclamationTriangleIcon className="h-8 w-8"/>
                     <p>Limitations</p>
@@ -37,7 +35,6 @@ const Home = () => {
                 <div className='space-y-2'>
                     <p className='infoText'>May occasionally generate incorrect information</p>
                     <p className='infoText'> May generate outdated datas</p>
-                    <p className='infoText'> For Educational and entertainment use only</p>
                 </div>
             </div>
         </div>

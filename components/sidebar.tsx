@@ -18,7 +18,7 @@ const SideBar = () => {
      )
      );
   return (
-    <div className='p-2 flex flex-col h-screen'>
+    <div className='p-1 flex flex-col h-screen'>
         <div className='flex-1'>
             <NewChat />
             <div className='hidden md:inline'>
@@ -36,7 +36,7 @@ const SideBar = () => {
         { session &&
          (<div onClick={()=> signOut()} className="cursor-pointer text-white flex flex-row justify-center items-start mx-auto hover:opacity-50
          mb-2">
-           <Image src={session.user?.image!} className="h-12 w-12 rounded-full" 
+           <Image src={session.user?.image!} className="sm:h-4 sm:w-4 h-12 w-12 rounded-full" 
         width={200}
         height={200} alt="" />
         <span className='text-sm ml-3 mt-3 hover:text-red-500 hover:font-bold'>Sign out</span>

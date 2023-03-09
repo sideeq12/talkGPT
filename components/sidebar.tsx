@@ -35,7 +35,7 @@ const SideBar = () => {
         </div>
         { session &&
          (<div onClick={()=> signOut()} className="cursor-pointer text-white flex flex-row justify-center items-start mx-auto hover:opacity-50
-         mb-2">
+         mb-10">
            <Image src={session.user?.image!} className="sm:h-4 sm:w-4 h-12 w-12 rounded-full" 
         width={200}
         height={200} alt="" />

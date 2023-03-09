@@ -3,7 +3,7 @@ import { BoltIcon, ExclamationTriangleIcon, SunIcon } from '@heroicons/react/24/
 
 const Home = () => {
   return (
-    <div className='flex flex-col justify-center items-center h-screen px-2 text-white'>
+    <div className='flex flex-col justify-center items-center h-screen px-2 overflow-hidden text-white'>
         <h1 className='text-5xl font-bold mb-20'>TalkGPT</h1>
 
         <div className='space-x-2 text-center flex flex-col md:flex-row'>

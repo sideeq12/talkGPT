@@ -21,7 +21,7 @@ const ModelSelection = () => {
       isLoading={isLoading}
       menuPosition="fixed"
       classNames={{
-        control: (state) =>"bg-[#434654] border-[#434354]"
+        control: (state) =>"bg-[#434654] border-[#434354] mb-5"
       }} 
       onChange={(e)=> setModel(e.value)}/>
     </div>
